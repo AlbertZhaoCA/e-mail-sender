@@ -32,7 +32,7 @@ def send_email(api_key, username, password, to):
 
         if body is None:
             print("No content to send, skipping this iteration.")
-            sleep(30)  # wait for 6 hours
+            sleep(60*60*3)  # wait for 3 hours
             continue
 
         msg = MIMEMultipart()
@@ -53,7 +53,7 @@ def send_email(api_key, username, password, to):
         else:
             print("Email sent successfully!")
 
-        sleep(30)  # wait for 6 hours
+        sleep(60*60*3)  # wait for 3 hours
 
 # Prompt the user for their API key and email information
 api_key = input("Enter your OpenAI API key: ")
