@@ -27,12 +27,12 @@ def chat_gpt(prompt, api_key):
 def send_email(api_key, username, password, to):
     while True:
         subject = "Grammar with explanation"
-        body = chat_gpt("introduce one topic to me use English, and show me the chinses" +
-                        " meaning of some not common words, finally use Chinese to summary", api_key)
+        body = chat_gpt("give me 20 GRE vocabularies, 10 daily expressions and 50 highly topic-related vocabularies" +
+                        " with usage", api_key)
 
         if body is None:
             print("No content to send, skipping this iteration.")
-            sleep(30)  # wait for 3 hours
+            sleep(60*60*6)  # wait for 6 hours
             continue
 
         msg = MIMEMultipart()
@@ -53,7 +53,7 @@ def send_email(api_key, username, password, to):
         else:
             print("Email sent successfully!")
 
-        sleep(30)  # wait for 3 hours
+        sleep(60*60*6)  # wait for 6 hours
 
 # Prompt the user for their API key and email information
 api_key = input("Enter your OpenAI API key: ")
